@@ -7,10 +7,10 @@
 
 Хорошо разделить код на несколько частей в проекте, даже если он не такой большой. JavaScript находится в четырех разных файлах:
 
-<li><border>constants.js</border>это место, где мы размещаем настройки и правила игры.</li>
-<li><border>board.js</border>для доски логики.</li>
-<li><border>piece.js</border>для кусок логики.</li>
-<li><border>main.js</border>имеет код для инициализации игры и общую игровую логику.</li>
-<li><border>index.html</border>порядок сценариев, которые мы добавляем в конце, очень важен.</li>
-<li><border>styles.css</border>все украшающие стили здесь.</li>
-<li><border>README.md</border>Информационный файл, который является первой страницей в хранилище.</li>
+<li><strong>constants.js</strong> это место, где мы размещаем настройки и правила игры.</li>
+<li><strong>board.js</strong> для доски логики.</li>
+<li><strong>piece.js</strong> для кусок логики.</li>
+<li><strong>main.js</strong> имеет код для инициализации игры и общую игровую логику.</li>
+<li><strong>index.html</strong> порядок сценариев, которые мы добавляем в конце, очень важен.</li>
+<li><strong>styles.css</strong> все украшающие стили здесь.</li>
+<li><strong>README.md</strong> информационный файл, который является первой страницей в хранилище.</li>
