@@ -32,6 +32,7 @@ moves = {
 	[KEY.RIGHT]: p => ({ ...p, x: p.x + 1 }),
 	[KEY.DOWN]: p => ({ ...p, y: p.y + 1 }),
 	[KEY.SPACE]: p => ({ ...p, y: p.y + 1 }),
+	[KEY.UP]: p => board.rotate(p)
 };
 
 let board = new Board(ctx, ctxNext);
@@ -130,5 +131,6 @@ function pause() {
 	ctx.fillStyle = 'black';
 	ctx.fillRect(1, 3, 8, 12);
 	ctx.font = '1px Arial';
+	ctx.fillStyle = 'yellow';
 	ctx.fillText('PAUSED', 3, 4);
 }
