@@ -73,3 +73,62 @@ function addEventListener() {
 	});
 }
 
+function resetGame() {
+	account.score = 0;
+	account.lines = 0;
+	account.level = 0;
+	board.reset();
+	time = { start: 0, elapsed: 0, level: LEVEL[account.level] };
+}
+
+function play() {
+	resetGame();
+	time.start = performance.now();
+	// Если у нас запущена старая игра, отмените старую
+	if (requestId) {
+		cancelAnimationFrame(requestId);
+	}
+
+	animate();
+}
+
+function animate(now = 0) {
+	time.elapsed = now - time.start;
+	if (timee.elapsed > time.level) {
+		time.start = now;
+		if (!board.drop()) {
+			gameOver();
+			return;
+		}
+	}
+
+	// Очистить доску перед рисованием нового состояния.
+	ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+
+	board.draw();
+	requestId = requestAnimationFrame(animate);
+}
+
+function gameOver() {
+	cancelAnimationFrame(requestId);
+	ctx.fillStyle = "black";
+	ctx.fillRect(1, 3, 8, 1.2);
+	ctx.font = '1px Arial';
+	ctx.fillStyle = "red";
+	ctx.fillText('GAME OVER', 1.8, 4);
+}
+
+function pause() {
+	if (!requestId) {
+		animate();
+		return;
+	}
+
+	cancelAnimationFrame(requestId);
+	requestId = null;
+
+	ctx.fillStyle = 'black';
+	ctx.fillRect(1, 3, 8, 12);
+	ctx.font = '1px Arial';
+	ctx.fillText('PAUSED', 3, 4);
+}
