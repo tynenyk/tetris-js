@@ -95,7 +95,7 @@ function play() {
 
 function animate(now = 0) {
 	time.elapsed = now - time.start;
-	if (timee.elapsed > time.level) {
+	if (time.elapsed > time.level) {
 		time.start = now;
 		if (!board.drop()) {
 			gameOver();
