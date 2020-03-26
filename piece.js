@@ -13,7 +13,7 @@ class Piece {
 
 	spawn() {
 		this.typeId = this.randomizeTetrominoType(COLORS.length - 1);
-		this.shape = SHAPED[this.typeId];
+		this.shape = SHAPES[this.typeId];
 		this.color = COLORS[this.typeId];
 		this.x = 0;
 		this.y = 0;
