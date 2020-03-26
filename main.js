@@ -4,8 +4,8 @@ const canvasNext = document.getElementById('next');
 const ctxNext = canvasNext.getContext('2d');
 
 let accountValues = {
-	score: 0;
-	level: 0;
+	score: 0,
+	level: 0,
 	lines: 0
 }
 
